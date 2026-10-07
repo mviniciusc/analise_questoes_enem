@@ -3,4 +3,9 @@
 
 
 #bases de dados
+data/
+database/
 *.duckdb
+
+
+README_1.md
