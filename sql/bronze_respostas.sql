@@ -1,5 +1,3 @@
--- criação da tabela de respostas dentro do schema bronze
-
 CREATE OR REPLACE TABLE bronze_respostas AS 
 SELECT * 
 FROM read_csv_auto([
