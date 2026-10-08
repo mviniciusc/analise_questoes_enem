@@ -18,6 +18,7 @@ Analise de questoes do ENEM 2021 - 2025/
 ├── database/          # [Ignorado no Git] Arquivo do banco de dados DuckDB
 ├── sql/               # Queries ingestão e tratamento de dados
 ├── scripts/           # Pipeline principal de orquestração Python
+├── main.py            # Script de orquestração do pipeline
 ├── .gitignore         # Regras de exclusão do controle de versão
 ├── requirements.txt   # Dependências do ambiente Python
 └── README.md          # Documentação do projeto
