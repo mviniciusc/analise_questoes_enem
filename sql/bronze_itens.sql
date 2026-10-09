@@ -4,10 +4,11 @@ FROM read_csv([
     'data/raw/microdados_enem_*/DADOS/ITENS_PROVA_*.csv' -- padrão de nomeclatura do arquivo. É igual para todos os anos.
 ],
     all_varchar = true, -- mantém todos os itens como varchar. Será arrumado na silver
-    -- quote = '',           -- Evita que aspas perdidas no meio do texto quebrem a leitura
-    escape = '', 
+    header=true, -- para usar a primeira linha como cabeçalho
+    sep=';', -- delimitador de colunas
+    encoding = 'latin-1', -- para ler corretamente as linhas. UTF-8 dá erro
     null_padding = true,  -- Se uma linha tiver menos colunas que o normal, preenche com nulo em vez de dar erro
-    ignore_errors = true, -- pula a linha se ela estiver completamente corrompida
+    union_by_name=true, -- Para pesquisar pelo nome da coluna, não pela ordem
     filename = true       -- para saber de qual arquivo veio o dado
 );
 

@@ -10,7 +10,7 @@ def rodar_pipeline_completo():
     # Executa a Camada Bronze
     executar_bronze()
 
-    print("Pipeline finalizado com sucesso!")
+    print("Pipeline finalizado.")
 
 
 #executar função principal

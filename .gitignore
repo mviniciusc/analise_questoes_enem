@@ -1,5 +1,6 @@
-#Ambiente virtual
+#Ambiente virtual e de desenvolvimento
 .venv
+.vscode
 
 
 #bases de dados
@@ -7,5 +8,7 @@ data/
 database/
 *.duckdb
 
-
+# arquivos de desenvolvimento
+__pycache__
 README_1.md
+exploracao.py
