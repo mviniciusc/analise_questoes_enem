@@ -44,7 +44,7 @@ Analise de questoes do ENEM 2021 - 2025/
 
 Ingestão bruta dos CSVs do INEP usando coringa para múltiplos anos. Preservação da tipagem  VARCHAR para evitar perda de dados. Criação de arquivo .csv e posterior tabela com matriz de referência.
 
-Tabelas: bronze_microdados (aprox. 20 milhões de linhas), bronze_itens (aprox. 28 mil linhas).
+Tabelas: bronze_microdados (aprox. 20 milhões de linhas), bronze_itens (aprox. 28 mil linhas), bronze_matriz (120 linhas).
 
 **Camada Silver:** (a ser implementada)
 
