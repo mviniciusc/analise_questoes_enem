@@ -7,12 +7,20 @@ def executar_silver():
     con = duckdb.connect('database/enem.duckdb')
 
     try:
+        # criar a camada silver da tabela de respostas
+        with open('sql/02_silver/silver_respostas.sql', 'r', encoding='utf-8') as file: # leitura do código sql para a camada prata.
+            query_matriz = file.read()
+        print("Executando a criação da camada silver_respostas.")
+        con.execute(query_matriz)
+        total_itens = con.execute("SELECT COUNT(*) FROM silver_respostas;").fetchone()[0] #pegar a "tabela" retornada pela query e usar apenas o número na primeira célula
+        print(f"Tabela silver_respostas criada com sucesso com {total_itens} linhas.")
+
         # criar a camada silver da tabela de itens
         with open('sql/02_silver/silver_itens.sql', 'r', encoding='utf-8') as file: # leitura do código sql para a camada prata.
             query_matriz = file.read()
         print("Executando a criação da camada silver_itens.")
         con.execute(query_matriz)
-        total_itens = con.execute("SELECT COUNT(*) FROM bronze_respostas;").fetchone()[0] #pegar a "tabela" retornada pela query e usar apenas o número na primeira célula
+        total_itens = con.execute("SELECT COUNT(*) FROM silver_itens;").fetchone()[0] #pegar a "tabela" retornada pela query e usar apenas o número na primeira célula
         print(f"Tabela silver_itens criada com sucesso com {total_itens} linhas.")
 
         # criar a camada silver da tabela da matriz de referência
