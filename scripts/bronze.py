@@ -14,7 +14,7 @@ def executar_bronze():
         # Ingestão da Tabela de Respostas
 
         #abre o sql com a query de criação da tabela de respostas, lê a query e armazena na variável
-        with open("sql/bronze_respostas.sql", "r", encoding="utf-8") as file:
+        with open("sql/01_bronze/bronze_respostas.sql", "r", encoding="utf-8") as file:
             query_respostas = file.read()
             
         print("Processando arquivos de respostas")
@@ -27,7 +27,7 @@ def executar_bronze():
         # Ingestão da Tabela de Itens
 
         #abre o sql com a query de criação da tabela de respostas, lê a query e armazena na variável
-        with open("sql/bronze_itens.sql", "r", encoding="utf-8") as file:
+        with open("sql/01_bronze/bronze_itens.sql", "r", encoding="utf-8") as file:
             query_itens = file.read()
             
         print("Processando arquivos de Itens da Prova")
@@ -39,7 +39,7 @@ def executar_bronze():
         # ingestão da tabela da matriz de referência
 
         #abre o sql com a query de criação da tabela de respostas, lê a query e armazena na variável
-        with open("sql/bronze_matriz.sql", "r", encoding="utf-8") as file:
+        with open("sql/01_bronze/bronze_matriz.sql", "r", encoding="utf-8") as file:
             query_matriz = file.read()
 
         print("Processando matriz de referência")
