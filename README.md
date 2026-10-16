@@ -29,7 +29,7 @@ Analise de questoes do ENEM 2021 - 2025/
 ├── sql/               # Queries para ingestão e tratamento de dados
 ├── scripts/           # Códigos em Python do pipeline principal
 ├── main.py            # Script de orquestração do pipeline
-├── .gitignore         # Regras de exclusão do controle de versão
+├── .gitignore         # Regras de exclusão do git
 ├── requirements.txt   # Dependências do ambiente Python (a ser implementado)
 └── README.md          # Documentação do projeto
 ```
