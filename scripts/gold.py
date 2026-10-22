@@ -12,7 +12,7 @@ def executar_gold():
         print("Tabela de competências da redação criada com sucesso.\n")
 
         # criar a tabela final com as médias de cada competência da redação. Pronta para visualização.
-        with open ('sql/03_gold/mart_redacao_final.sql', 'r', encoding='utf-8') as file:
+        with open ('sql/03_gold/mart_redacao.sql', 'r', encoding='utf-8') as file:
             query=file.read()
         print("Criando a tabela mart_redacao")
         con.execute(query)
