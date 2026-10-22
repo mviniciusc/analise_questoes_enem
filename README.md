@@ -39,6 +39,8 @@ Analise de questoes do ENEM 2021 - 2025/
 
 - **Lista de habilidades em arquivo PDF**: Criação de uma tabela de habilidades em um arquivo .csv usando python (biblioteca pdfplumber).
 
+- **Falta de correspondência entre tabelas de redação**: Uso de técnica unpivot para dividir cada redação em competências separadas. Join com matriz de referência de redação para cruzar cada competência com sua nota média.
+
 ## Construção da arquitetura medalhão
 **Camada Bronze:**
 
@@ -46,11 +48,12 @@ Ingestão bruta dos CSVs do INEP usando coringa para múltiplos anos. Preservaç
 
 Tabelas: bronze_microdados (aprox. 20 milhões de linhas), bronze_itens (aprox. 28 mil linhas), bronze_matriz (120 linhas).
 
-**Camada Silver:** (a ser implementada)
+**Camada Silver:**
 
 Tabela matriz de referência: Convertidos tipos visando melhor performance.
 
 Tabela itens: Remoção de itens abandonados (questões anuladadas). Remoção de colunas não relevantes ao objetivo. 
 
+Tabelas: silver_respostas (aprox. 14,4 milhões de linhas), silver_itens (aprox. 27,6 mil linhas), silver_matriz (120 linhas)
 
 **Camada Gold:** (a ser implementada)
