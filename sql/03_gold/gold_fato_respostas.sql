@@ -1,7 +1,6 @@
 -- Aqui é feito o fatiamento e união das respostas das questões.
 -- Essa tabela é base para duas análises diferentes, por isso foi salva como ponto intermediário. 
-
-CREATE OR REPLACE gold_fato_respostas AS
+CREATE OR REPLACE TABLE gold_fato_respostas AS
 -- abrir o string com respostas e gabarito da prova LC
 WITH LC AS (
 	SELECT CO_PROVA_LC AS CO_PROVA, -- Não aparece mais o LC porque no final vai ficar tudo junto

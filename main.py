@@ -11,8 +11,8 @@ def rodar_pipeline_completo():
 
     # Executa as camadas
     # executar_bronze()
-    executar_silver()
-    # executar_gold()
+    # executar_silver()
+    executar_gold()
 
     print("Pipeline finalizado.")
 #executar função principal
