@@ -22,8 +22,8 @@ CREATE OR REPLACE TABLE silver_respostas AS
 		TRIM(TX_GABARITO_CN) AS GABARITO_CN,
 		TRIM(TX_GABARITO_CH) AS GABARITO_CH,
 		CASE -- Case necessário para remover as respostas da prova de lingua estrangeira que o candidato não escolheu
-			WHEN TP_LINGUA = 0 THEN TX_GABARITO_LC[1:5] || TX_GABARITO_LC[11:50]
-			WHEN TP_LINGUA = 1 THEN TX_GABARITO_LC[6:50]
+			WHEN TP_LINGUA = 0 THEN TX_GABARITO_LC[1:5] || TX_GABARITO_LC[11:50] -- Se for prova de inglês remove o gabarito de espanhol
+			WHEN TP_LINGUA = 1 THEN TX_GABARITO_LC[6:50] -- Se for prova de espanhol remove o gabarito de inglês
 			ELSE TX_GABARITO_LC
 		END AS GABARITO_LC,
 		TRIM(TX_GABARITO_MT) AS GABARITO_MT,
