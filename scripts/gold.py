@@ -28,7 +28,7 @@ def executar_gold():
         con.execute(query)
         print("Tabela de médias das competências da redação criada com sucesso.\n")
 
-    except Exception as e: # caputrar erros e lançar no terminal
+    except Exception as e: # capturar erros e lançar no terminal
         print(f"Erro durante a criação da camada gold: \n{e}")
 
     finally: # com ou sem erro tem que fechar a conexão com o banco

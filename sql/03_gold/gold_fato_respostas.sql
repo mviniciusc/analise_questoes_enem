@@ -36,13 +36,20 @@ MT AS (
 	UNNEST(generate_series(136, 180)) AS POSICAO -- Provas de MT sempre começam da questão 136
 	FROM enem.main.silver_respostas 
 	WHERE PRESENTE_MT = 1
-)
+),
 --Juntar todas as CTEs acima
-SELECT 
-	* FROM LC
+TABELAS_JUNTAS AS (
+	SELECT * FROM LC
 	UNION ALL
 	SELECT * FROM CH
 	UNION ALL
 	SELECT * FROM CN
 	UNION ALL
 	SELECT * FROM MT
+)
+-- finalmente a criação da tabela em si
+SELECT 
+	CO_PROVA,
+	POSICAO,
+	CASE WHEN RESPOSTA = GABARITO THEN 1.0 ELSE 0.0 END AS ACERTO
+FROM TABELAS_JUNTAS
