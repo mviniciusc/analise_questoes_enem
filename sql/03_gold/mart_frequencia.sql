@@ -1,4 +1,5 @@
 -- Criação da tabela mart_frequencia que analisa quais as habilidades mais cobradas em frequência de aparição na prova.
+CREATE OR REPLACE TABLE mart_frequencia AS
 SELECT 
     SI.SG_AREA,
     SI.CO_HABILIDADE,
@@ -15,5 +16,4 @@ GROUP BY
 ORDER BY
 	SI.SG_AREA,
 	quantidade_questoes DESC
-
 -- OBS: A soma das ocorrências dá 2085 questões. A base inclui não apenas as 900 questões da aplicação regular mas também questões de provas como PPL, reaplicações e provas adaptadas.
