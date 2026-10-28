@@ -1,4 +1,5 @@
 -- Esse mart é para analisar como se relacionam a dificuldade prevista da questão (DIFICULDADE_TRI) e a dificuldade real que os alunos tiveram (TAXA_ACERTO)
+CREATE OR REPLACE TABLE mart_tri AS
 SELECT
 	SI.CO_ITEM, -- Para identificar unicamente cada questão, evitar que duas questões de mesma habilidade que por acaso estejam na mesma posição sejam agrupadas
 	SI.SG_AREA,
