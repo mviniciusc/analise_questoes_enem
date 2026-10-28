@@ -15,5 +15,5 @@ GROUP BY
     SM.habilidade_descricao
 ORDER BY
 	SI.SG_AREA,
-	quantidade_questoes DESC
+	SI.CO_HABILIDADE
 -- OBS: A soma das ocorrências dá 2085 questões. A base inclui não apenas as 900 questões da aplicação regular mas também questões de provas como PPL, reaplicações e provas adaptadas.

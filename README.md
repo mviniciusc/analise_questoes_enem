@@ -17,8 +17,8 @@ O pipeline utiliza a **Arquitetura Medalhão** (Bronze, Prata e Ouro) integrada 
 
 - **Storage / Ingestão:** Python + SQL + DuckDB
 - **Prototipagem e testes:** Dbeaver
-- **Modelagem Dimensional:** Star Schema (Tabelas Fato e Dimensão)
-- **Controle de Versão e Publicação:** Git & GitHub
+- **Modelagem dimensional:** Star Schema (Tabelas Fato e Dimensão)
+- **Controle de versão e publicação:** Git & GitHub
 - **Visualização:** <!-- a ser decidido -->
 
 ## 📂 Estrutura do Repositório
@@ -26,7 +26,7 @@ O pipeline utiliza a **Arquitetura Medalhão** (Bronze, Prata e Ouro) integrada 
 Analise de questoes do ENEM 2021 - 2025/
 ├── data/              # [Ignorado no Git] Dados brutos direto da fonte
 ├── database/          # [Ignorado no Git] Arquivo do banco de dados DuckDB
-├── sql/               # Queries para ingestão e tratamento de dados
+├── sql/               # Queries em SQL para ingestão e tratamento de dados
 ├── scripts/           # Códigos em Python do pipeline principal
 ├── main.py            # Script de orquestração do pipeline
 ├── .gitignore         # Regras de exclusão do git

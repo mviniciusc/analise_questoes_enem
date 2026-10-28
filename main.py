@@ -7,7 +7,7 @@ from scripts.gold import executar_gold
 
 #função principal para chamar e orquestrar as funções das camadas
 def rodar_pipeline_completo():
-    print("Iniciando Pipeline de Dados - ENEM\n")
+    print("Iniciando Pipeline de Dados - ENEM")
 
     # Executa as camadas
     # executar_bronze()
