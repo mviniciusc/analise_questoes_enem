@@ -16,7 +16,8 @@ def executar_gold():
     try:
         # criar_tabela('sql/03_gold/gold_fato_respostas.sql', 'tabela-base') # criar tabela-base para análise das questões
         # criar_tabela('sql/03_gold/mart_frequencia.sql','mart_frequencia') # criar tabela final para análise da frequência de competências e habilidades
-        criar_tabela('sql/03_gold/mart_TRI.sql','mart_tri')
+        # criar_tabela('sql/03_gold/mart_TRI.sql','mart_tri') # Criar tabela final para análise de dificuldade prevista x taxa de acerto
+        criar_tabela('sql/03_gold/mart_fadiga.sql','mart_fadiga') # criar tabela final para entender se o aluno "cansa" ao longo da prova e se isso impacta no desempenho
         # criar_tabela('sql/03_gold/dim_competencias_redacao.sql','dim_competencias_redacao') # criar tabela com as competências da redação
         # criar_tabela('sql/03_gold/mart_redacao.sql','mart_redacao') # criar a tabela final com as médias de cada competência da redação. Pronta para visualização.
 
