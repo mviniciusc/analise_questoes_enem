@@ -26,6 +26,8 @@ O pipeline utiliza a **Arquitetura Medalhão** (Bronze, Prata e Ouro) integrada 
 Analise de questoes do ENEM 2021 - 2025/
 ├── data/              # [Ignorado no Git] Dados brutos direto da fonte
 ├── database/          # [Ignorado no Git] Arquivo do banco de dados DuckDB
+├── graficos/          # Gráficos produzidos na análise final
+├── notebooks/         # Jupyter notebooks utilizados para as análises
 ├── sql/               # Queries em SQL para ingestão e tratamento de dados
 ├── scripts/           # Códigos em Python do pipeline principal
 ├── main.py            # Script de orquestração do pipeline
@@ -33,6 +35,12 @@ Analise de questoes do ENEM 2021 - 2025/
 ├── requirements.txt   # Dependências do ambiente Python (a ser implementado)
 └── README.md          # Documentação do projeto
 ```
+
+## Estratégia de engenharia de dados
+
+As tabelas desse estudo são muito grandes, na casa de milhões de linhas. Processar todas essas linhas realizando cálculos e a criação de novas tabelas em memória seria completamente inviável. Portanto, resolvemos utilizar um motor de banco de dados OLAP, e o escolhido foi o duckdb. Como esse tipo de motor de banco de dados é voltado especialmente para análises, podemos tirar proveito desse poder para viabilizar nosso projeto. O duckdb não salva dados em processamento na memória RAM, mas sim processa as tabelas em lotes e já salva esses lotes direto no banco.
+
+Decidimos, portanto, construir todo o pipeline em cima do duckdb. Desde a arquitetura medalhão, com suas camadas, até a criação de tabelas mart que já estão completamente prontas para análise. Dessa maneira ficamos com um projeto organizado e delimitado. O pipeline cuida de todo o tratamento necessário e a parte de visualização se encarrega apenas da parte gráfica.
 
 ## Desafios encontrados e soluções aplicadas
 - **Alteração na estrutura do arquivo fonte dos dados**: utilizei ```union_by_name=True``` como parâmetro na query para que as linhas fossem integradas pelo título da coluna, não pela posição.
