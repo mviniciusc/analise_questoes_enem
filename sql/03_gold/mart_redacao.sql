@@ -32,6 +32,7 @@ GROUP BY id_competencia
 -- Cruzar com a tabela que contém a descrição das competências para atribuir cada média a sua descrição.
 SELECT 
 	mc.id_competencia AS id,
+    cr.nome_competencia AS nome,
 	cr.descricao_competencia AS descricao,
 	mc.media_nota AS nota_media
 FROM enem.main.dim_competencias_redacao cr
