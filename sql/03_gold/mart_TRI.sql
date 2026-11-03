@@ -1,12 +1,13 @@
 -- Esse mart é para analisar como se relacionam a dificuldade prevista da questão (DIFICULDADE_TRI) e a dificuldade real que os alunos tiveram (TAXA_ACERTO)
 CREATE OR REPLACE TABLE mart_tri AS
+WITH taxas_calculadas AS (
 SELECT
 	SI.CO_ITEM, -- Para identificar unicamente cada questão, evitar que duas questões de mesma habilidade que por acaso estejam na mesma posição sejam agrupadas
 	SI.SG_AREA,
 	SI.CO_HABILIDADE,
 	SM.habilidade_descricao,
 	SI.DIFICULDADE_TRI,
-	ROUND(AVG(FR.ACERTO)*100,2) AS TAXA_ACERTO
+	ROUND((1 - AVG(FR.ACERTO)) * 100, 2) AS TAXA_ERRO
 FROM enem.main.gold_fato_respostas FR
 JOIN enem.main.silver_itens SI
 	ON FR.CO_PROVA = SI.CO_PROVA 
@@ -23,3 +24,18 @@ GROUP BY
 ORDER BY 
 	SI.SG_AREA,
 	SI.CO_HABILIDADE
+)
+SELECT 
+	SG_AREA AS Area,
+	CO_HABILIDADE AS Habilidade,
+	habilidade_descricao AS Descricao,
+	ROUND(AVG(DIFICULDADE_TRI), 4) AS "Dificuldade média TRI",
+    ROUND(AVG(TAXA_ERRO), 2) AS "Taxa média de erro"
+FROM taxas_calculadas 
+GROUP BY
+	SG_AREA,
+	CO_HABILIDADE,
+	habilidade_descricao
+ORDER BY 
+	SG_AREA,
+	CO_HABILIDADE
