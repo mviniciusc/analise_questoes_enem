@@ -9,7 +9,7 @@ SELECT
 		WHEN SI.SG_AREA IN ('MT', 'CN') THEN SI.CO_POSICAO-90
 		ELSE SI.CO_POSICAO
 	END AS POSICAO_DIA,
-	ROUND(AVG(FR.ACERTO)*100,2) AS TAXA_ACERTO, -- A taxa de acerto média da questão naquela posição
+	ROUND((1 - AVG(FR.ACERTO)) * 100, 2) AS TAXA_ERRO, -- A taxa de erro média da questão naquela posição
 	ROUND(AVG(SI.DIFICULDADE_TRI), 4) AS MEDIA_DIFICULDADE -- A média de dificuldade da questão naquela posição
 FROM enem.main.gold_fato_respostas FR
 JOIN enem.main.silver_itens SI
