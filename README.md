@@ -49,6 +49,10 @@ Decidimos, portanto, construir todo o pipeline em cima do duckdb. Desde a arquit
 
 - **Falta de correspondência entre tabelas de redação**: Uso de técnica unpivot para dividir cada redação em competências separadas. Join com matriz de referência de redação para cruzar cada competência com sua nota média.
 
+- **Distribuição não-uniforme de dificuldade entre as áreas do conhecimento**: Criação de uma métrica ponderada de taxa de erro por nível de dificuldade. Essa nova métrica permite entender se o erro cresce junto com a dificuldade.
+
+
+
 ## Construção da arquitetura medalhão
 **Camada Bronze:**
 
