@@ -3,6 +3,8 @@
 ## Sobre o Projeto
 Este projeto realiza a extração, tratamento, modelagem dimensional e visualização dos microdados do ENEM referentes aos anos de 2021 a 2025. O objetivo principal é identificar insights e padrões nas questões para auxiliar a preparação de estudantes.
 
+Este repositório traz a construção técnica do projeto. Para a análise completa, consulte o [post no Medium](https://medium.com/@mviniciusc93/a-anatomia-do-enem-uma-jornada-de-dados-por-tr%C3%A1s-de-quest%C3%B5es-e-notas-b6de9b07565b?sharedUserId=mviniciusc93).
+
 ## Perguntas norteadoras da análise
 - Quais as competências e habilidades menos/mais cobradas (em frequência)?
 - Quais as competências e habilidades menos/mais difíceis? As questões consideradas pelo TRI como mais difíceis são mesmo as que têm maior número de erro?
@@ -46,7 +48,7 @@ A camada bronze realiza a leitura de todos os arquivos .csv presentes na pasta. 
 
 Na parte de visualização e análise, cada pergunta inicial recebe um arquivo próprio. A estrutra desses arquivos é sempre a mesma, criando assim um pipeline de análise. Os notebook de análise estão disponíveis [nessa pasta](notebooks). Os gráficos foram criados usando bibliotecas python e forma escolhidos de acordo com a pergunta a ser respondida. Os gráficos produzidos estão disponíves em formato de imagem [nesse diretório](graficos).
 
-## Desafios encontrados e soluções aplicadas
+## Principais desafios encontrados e soluções aplicadas
 - **Alteração na estrutura do arquivo fonte dos dados**: utilizamos ```union_by_name=True``` como parâmetro na query para que as linhas fossem integradas pelo título da coluna, não pela posição.
 
 - **Lista de habilidades em arquivo PDF**: Criamos uma tabela de habilidades em um arquivo .csv usando python (biblioteca pdfplumber) e extraindo dados direto do arquivo em PDF.
